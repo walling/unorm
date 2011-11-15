@@ -1,0 +1,14 @@
+<script charset="utf-8" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
+<script charset="utf-8" src="unorm.js"></script>
+<script charset="utf-8" src="unormdata.js"></script>
+<script charset="utf-8" src="unittest.js"></script>
+
+<input type="button" value="Batch test (takes about 10minuts)" onclick="testTrigger();">
+<br>
+
+<input type="text" name="testcase" id="testcase">
+<input type="button" value="Single test" onclick="trigger(document.getElementById('testcase').value);">
+<br>
+
+<div id="test_result">
+</div>

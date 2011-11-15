@@ -1,0 +1,17 @@
+{
+	"name" : "unorm",
+	"version" : "1.0.0",
+	"description" : "JavaScript Unicode Normalization - NFC, NFD, NFKC, NFKD. Read <http://unicode.org/reports/tr15/> UAX #15 Unicode Normalization Forms.",
+	"author": "Matsuza <matsuza@gmail.com>",
+	"contributors": [
+		{ "name": "Bjarke Walling", "email": "bwp@bwp.dk" }
+	],
+	"repository" : {
+		"type" : "git",
+		"url" : "http://github.com/walling/unorm.git" 
+	},
+	"main": "./index.js",
+	"engines" : {
+		"node" : ">= 0.4.0"
+	}
+}

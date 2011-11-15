@@ -1,0 +1,133 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<script charset="utf-8" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
+<script charset="utf-8" src="unorm.js"></script>
+<script charset="utf-8" src="unormdata.js"></script>
+</head>
+<body>
+
+
+<h1>Unicode Normalizer</h1>
+author; matsuza (matsuza gmail.com, <a href="http://d.hatena.ne.jp/matsuza">http://d.hatena.ne.jp/matsuza</a>)<p>
+Unicode規格で規定されているNormalize処理を行います。<br>
+<a href="http://unicode.org/reports/tr15/">UAX #15: Unicode Normalization Forms:</a><br>
+Unicode.orgで提供されているテストケースに準拠しています。
+<br>
+MITとGPLのデュアルライセンスとします。
+
+<script>
+function onchangesample(e){
+ var t = e.srcElement ? e.srcElement.value : e.target.value;
+ var tgt = [[UNorm.nfd, "#nfd"], [UNorm.nfkd, "#nfkd"], [UNorm.nfc, "#nfc"], [UNorm.nfkc, "#nfkc"]];
+ for(var i = 0; i < tgt.length; ++i){
+  var cnvd = tgt[i][0](t);
+  $(tgt[i][1] + "_res")[0].value = cnvd;
+  $(tgt[i][1] + "_esc")[0].innerHTML = (function(str){
+         var ret = "";
+         for(var i = 0; i < str.length; ++i){
+            ret +="&amp;#x" + str.charCodeAt(i).toString(16) + ";";
+         }
+         return ret;
+      })(cnvd);
+  $(tgt[i][1] + "_len")[0].innerHTML = cnvd.length;
+ }
+}
+</script>
+<style>
+
+</style>
+
+<h2>デモ</h2>
+↓に何か文字列を入れると、NFD, NFKD, NFC, NFKCの各モードでノーマライズした結果が表示されます。<br>
+入れると面白い文字列一覧 ; ㈱㍍ガｶﾞ①&#xAC00;&#519;<br>
+文字列長や、delキーで文字を削除するときの振る舞いなんか面白いかも知れません。<br>
+
+
+<textarea name="sample" id="sample" onkeyup="onchangesample(event);"></textarea>
+<br>
+<div>
+NFD(length=<span id="nfd_len"></span>)<br>
+<textarea id="nfd_res" class="ntest"></textarea>
+<div id="nfd_esc" class="esc"></div>
+</div>
+<div>
+NFKD(length=<span id="nfkd_len"></span>)<br>
+<textarea id="nfkd_res" class="ntest"></textarea>
+<div id="nfkd_esc" class="esc"></div>
+</div>
+<div>
+NFC(length=<span id="nfc_len"></span>)<br>
+<textarea id="nfc_res" class="ntest"></textarea>
+<div id="nfc_esc" class="esc"></div>
+</div>
+<div>
+NFKC(length=<span id="nfkc_len"></span>)<br>
+<textarea id="nfkc_res" class="ntest"></textarea>
+<div id="nfkc_esc" class="esc"></div>
+</div>
+
+<h2>利用方法</h2>
+<h3>読み込み方法</h3>
+unorm.jsとunormdata.jsを、この順に読み込んでください。
+<h3>名前空間</h3>
+UNorm名前空間を利用します。以下の説明ではこの名前空間が暗黙的に使われているものとします。
+<h3>API</h3>
+
+<h4>normalize(mode, str)</h4>
+ノーマライズを行います。
+<h5>引数</h5>
+<ul>
+<li>mode : ノーマライズのモードを指定します。"NFD", "NFKD", "NFC", "NFKC"が指定できます。
+<li>str : ノーマライズ処理を行う対象のStringです。
+<li>返値 : String
+</ul>
+<h5>備考</h5>
+ノーマライズはそれなりに重い処理なので、大きな文字列を処理する場合は後述するイテレータインタフェースを用いて適度にsetTimeout()することを推奨します。<br>
+<h5>サンプル</h5>
+<pre>
+var s = "㈱㍍";
+document.write(UNorm.normalize("NFKC", s));
+</pre>
+
+<h4>nfd(str)</h4>
+<h4>nfkd(str)</h4>
+<h4>nfc(str)</h4>
+<h4>nfkc(str)</h4>
+関数名に示される種類のノーマライズを行います。
+nfd(str)はnormalize("NFD", str)と厳密に等価です。
+<h5>引数</h5>
+<ul>
+<li>str : ノーマライズ処理を行う対象のStringです。
+<li>返値 : String
+</ul>
+<h5>サンプル</h5>
+<pre>
+var s = "㈱㍍";
+document.write(UNorm.nfkc(s));
+</pre>
+
+<h4>createIterator(mode, str)</h4>
+ノーマライザのイテレータインタフェースを返します。
+<h5>引数</h5>
+<ul>
+<li>mode : ノーマライズのモードを指定します。"NFD", "NFKD", "NFC", "NFKC"が指定できます。
+<li>str : ノーマライズ処理を行う対象のStringです。
+<li>返値 : イテレータを返します。
+</ul>
+<h5>備考</h5>
+返値はイテレータオブジェクトです。<br>
+ノーマライズ処理を行う際、簡便なのはnormalize関数を使って処理することですが、巨大な文字列を処理する場合はイテレータインタフェースを使うことも考慮してください。<br>
+イテレータオブジェクトはnext()メソッドを備えており、next()を呼ぶたびにUCharオブジェクトを返します。返すべきデータが無くなった以降は、next()を呼ぶたびにnullが帰ります。<br>
+UCharオブジェクトはtoString()を備えており、これを用いて文字列に変換できます。<br>
+<h5>サンプル</h5>
+<pre>
+var it = createIterator("NFC", "①ｶﾞｷﾞｸﾞｹﾞｺﾞ");
+var ret = "";
+var uchar;
+while(!!(uchar = it.next())){
+	ret += uchar.toString();
+}
+document.write(ret);
+</pre>
+</body>

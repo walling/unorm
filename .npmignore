@@ -1,3 +1,5 @@
-./src/
-./download-source.sh
-./package.sh
+src
+download-source.sh
+package.sh
+node_modules/
+npm-debug.log

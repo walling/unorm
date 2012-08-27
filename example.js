@@ -32,7 +32,7 @@ console.log(unorm.nfkc(scientific));
 
 // Remove combining characters / marks from Swedish name, ie. ö becomes o.
 // This is useful for indexing and searching internationalized text.
-XRegExp = require('xregexp');
+XRegExp = require('xregexp').XRegExp;
 name = '\u00C5ngstr\u00F6m';
 console.log('- Example 4 -');
 console.log(unorm.nfkd(name));

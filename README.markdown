@@ -13,14 +13,14 @@ Usage example
 For a longer example, see `example.js`.
 
 ```javascript
-unorm = require('unorm');
+var unorm = require('unorm');
 
-text =
+var text =
   'The \u212B symbol invented by A. J. \u00C5ngstr\u00F6m ' +
   '(1814, L\u00F6gd\u00F6, \u2013 1874) denotes the length ' +
   '10\u207B\u00B9\u2070 m.';
 
-combining = /[\u0300-\u036F]/g; // Use XRegExp('\\p{M}', 'g'); see example.js.
+var combining = /[\u0300-\u036F]/g; // Use XRegExp('\\p{M}', 'g'); see example.js.
 
 console.log('Regular:  ' + text);
 console.log('NFC:      ' + unorm.nfc(text));

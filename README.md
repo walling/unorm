@@ -1,10 +1,12 @@
-This is [Unicode Normalizer] in a Common JS module. I'm not affiliated with
-Matsuza, the author of Unicode Normalizer.
+This is [Unicode Normalizer] in a Common JS module. I'm not affiliated with Matsuza, the original author of Unicode Normalizer.
+
 
 Installation
 ------------
 
-    npm install unorm
+```bash
+npm install unorm
+```
 
 
 Usage example
@@ -37,7 +39,7 @@ License
 This project includes the software package **Unicode Normalizer 1.0.0**. The
 software dual licensed under the MIT and GPL licenses. Here is the MIT license:
 
-    Copyright (c) 2008 Matsuza <matsuza@gmail.com>
+    Copyright (c) 2008-2013 Matsuza <matsuza@gmail.com>, Bjarke Walling <bwp@bwp.dk>
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to

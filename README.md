@@ -44,6 +44,25 @@ console.log(' * = Combining characters removed from decomposed form.');
 ```
 
 
+Road map
+--------
+
+As of May 2013.
+
+Short term:
+- Look at packaging the module better
+- Clean up some of the code
+- Fix JSHint errors
+
+Middle term:
+- Test harness by using the Unicode normalization test suite and examples from the reports
+
+Longer term:
+- Look at the unicode data compiler to create up-to-date (Unicode 6.2.0) compatible normalization
+- Look at possible optimizations (speed primarely, module size secondarily)
+- Adding functions to quick check normalizations: `is_nfc`, `is_nfd`, etc.
+
+
 License
 -------
 

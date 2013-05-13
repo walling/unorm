@@ -1,6 +1,8 @@
 #!/bin/sh
 test -f index.js && rm index.js
 
+echo '/*globals exports:true,window:true*/'           >> index.js
+echo '(function() {'                                  >> index.js
 echo ''                                               >> index.js
 echo '/***** unorm.js *****/'                         >> index.js
 echo ''                                               >> index.js
@@ -11,11 +13,6 @@ echo '/***** unormdata.js *****/'                     >> index.js
 echo ''                                               >> index.js
 cat src/unormdata.js                                  >> index.js
 echo ''                                               >> index.js
-echo '/***** Export as Common JS module *****/'       >> index.js
+cat export.js                                         >> index.js
 echo ''                                               >> index.js
-echo '// The easy conversion functions are exported.' >> index.js
-echo ''                                               >> index.js
-echo 'exports.nfc  = UNorm.nfc;'                      >> index.js
-echo 'exports.nfd  = UNorm.nfd;'                      >> index.js
-echo 'exports.nfkc = UNorm.nfkc;'                     >> index.js
-echo 'exports.nfkd = UNorm.nfkd;'                     >> index.js
+echo '}());'                                          >> index.js

@@ -1,5 +1,6 @@
 src
 download-source.sh
 package.sh
+export.js
 node_modules/
 npm-debug.log

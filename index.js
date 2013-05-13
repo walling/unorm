@@ -1,3 +1,5 @@
+/*globals exports:true,window:true*/
+(function() {
 
 /***** unorm.js *****/
 
@@ -396,9 +398,16 @@ if(!this.UNorm || !this.UNorm.UChar){throw 'must include unorm.js prior to unorm
 
 /***** Export as Common JS module *****/
 
-// The easy conversion functions are exported.
+var root = typeof(exports) === 'object' ? exports : {};
 
-exports.nfc  = UNorm.nfc;
-exports.nfd  = UNorm.nfd;
-exports.nfkc = UNorm.nfkc;
-exports.nfkd = UNorm.nfkd;
+if (typeof(window) === 'object') {
+	window.unorm = root;
+}
+
+// The easy conversion functions are exported.
+root.nfc  = UNorm.nfc;
+root.nfd  = UNorm.nfd;
+root.nfkc = UNorm.nfkc;
+root.nfkd = UNorm.nfkd;
+
+}());

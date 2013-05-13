@@ -14,10 +14,10 @@ Functions
 
 This module exports four functions: `nfc`, `nfd`, `nfkc`, and `nfkd`; one for each Unicode normalization. In the browser the functions are exported in the `unorm` global. In CommonJS environments you just require the module. Functions:
 
- *  `function nfd(str)` – Canonical Decomposition
- *  `function nfc(str)` – Canonical Decomposition, followed by Canonical Composition
- *  `function nfkd(str)` – Compatibility Decomposition
- *  `function nfkc(str)` – Compatibility Decomposition, followed by Canonical Composition
+ *  `unorm.nfd(str)` – Canonical Decomposition
+ *  `unorm.nfc(str)` – Canonical Decomposition, followed by Canonical Composition
+ *  `unorm.nfkd(str)` – Compatibility Decomposition
+ *  `unorm.nfkc(str)` – Compatibility Decomposition, followed by Canonical Composition
 
 
 Node.JS example

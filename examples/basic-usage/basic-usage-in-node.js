@@ -1,3 +1,6 @@
+/*jshint node:true*/
+'use strict';
+
 var unorm = require('unorm');
 
 // Function to display Unicode codepoints of a string.
@@ -32,8 +35,10 @@ console.log(unorm.nfkc(scientific));
 
 // Remove combining characters / marks from Swedish name, ie. ö becomes o.
 // This is useful for indexing and searching internationalized text.
-var XRegExp = require('xregexp').XRegExp;
-var name = '\u00C5ngstr\u00F6m';
-console.log('- Example 4 -');
-console.log(unorm.nfkd(name));
-console.log(unorm.nfkd(name).replace(XRegExp('\\p{M}', 'g'), ''));
+try {
+	var xregexp = require('xregexp').XRegExp;
+	var name = '\u00C5ngstr\u00F6m';
+	console.log('- Example 4 -');
+	console.log(unorm.nfkd(name));
+	console.log(unorm.nfkd(name).replace(xregexp('\\p{M}', 'g'), ''));
+} catch (ex) {}

@@ -50,7 +50,6 @@ Road map
 As of May 2013.
 
 Short term:
-- Look at packaging the module better
 - Clean up some of the code
 - Fix JSHint errors
 

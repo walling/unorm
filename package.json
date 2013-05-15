@@ -11,7 +11,7 @@
 		"type" : "git",
 		"url" : "http://github.com/walling/unorm.git" 
 	},
-	"main": "./index.js",
+	"main": "./lib/unorm.js",
 	"engines" : {
 		"node" : ">= 0.4.0"
 	}

@@ -23,7 +23,7 @@ This module exports four functions: `nfc`, `nfd`, `nfkc`, and `nfkd`; one for ea
 Node.JS example
 ---------------
 
-For a longer example, see `example.js`.
+For a longer example, see `examples` directory.
 
 ```javascript
 var unorm = require('unorm');

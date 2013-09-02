@@ -12,7 +12,7 @@ npm install unorm
 Polyfill
 --------
 
-You can use this module as a polyfill for `[String.prototype.normalize]`, for example:
+You can use this module as a polyfill for [String.prototype.normalize], for example:
 
 ```javascript
 console.log('æøåäüö'.normalize('NFKD'));

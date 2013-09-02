@@ -9,6 +9,16 @@ npm install unorm
 ```
 
 
+Polyfill
+--------
+
+You can use this module as a polyfill for `[String.prototype.normalize]`, for example:
+
+```javascript
+console.log('æøåäüö'.normalize('NFKD'));
+```
+
+
 Functions
 ---------
 
@@ -90,3 +100,4 @@ software dual licensed under the MIT and GPL licenses. Here is the MIT license:
 
 
 [Unicode Normalizer]: http://coderepos.org/share/browser/lang/javascript/UnicodeNormalizer
+[String.prototype.normalize]: http://people.mozilla.org/~jorendorff/es6-draft.html#sec-15.5.3.26

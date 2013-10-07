@@ -5,6 +5,7 @@
 	"author": "Bjarke Walling <bwp@bwp.dk>",
 	"contributors": [
 		{ "name": "Bjarke Walling", "email": "bwp@bwp.dk" },
+		{ "name": "Oleg Grenrus", "email": "oleg.grenrus@iki.fi" },
 		{ "name": "Matsuza", "email": "matsuza@gmail.com" }
 	],
 	"repository" : {

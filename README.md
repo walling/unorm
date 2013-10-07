@@ -72,6 +72,12 @@ Longer term:
 - Adding functions to quick check normalizations: `is_nfc`, `is_nfd`, etc.
 
 
+Contributers
+------------
+
+ - **Oleg Grenrus** cleaned up the code base and fixed JSHint errors.
+
+
 License
 -------
 

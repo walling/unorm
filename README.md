@@ -57,13 +57,9 @@ console.log(' * = Combining characters removed from decomposed form.');
 Road map
 --------
 
-As of May 2013.
+As of October 2013.
 
 Short term:
-- Clean up some of the code
-- Fix JSHint errors
-
-Middle term:
 - Test harness by using the Unicode normalization test suite and examples from the reports
 
 Longer term:

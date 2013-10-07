@@ -8,7 +8,6 @@ Installation
 npm install unorm
 ```
 
-
 Polyfill
 --------
 
@@ -18,6 +17,7 @@ You can use this module as a polyfill for [String.prototype.normalize], for exam
 console.log('æøåäüö'.normalize('NFKD'));
 ```
 
+The module uses some [EcmaScript 5](http://kangax.github.io/es5-compat-table/) features. Other browsers should use a compability shim, e.g. [es5-shim](https://github.com/kriskowal/es5-shim).
 
 Functions
 ---------

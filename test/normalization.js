@@ -1,5 +1,6 @@
 /* jshint node: true */
 /* global describe:true, it:true */
+/* global UNorm:true */
 "use strict";
 
 var assert = require("assert");
@@ -22,7 +23,7 @@ function getTestString(line){
       var match;
       while ((match = splitpattern.exec(line[i])) !== null) {
          /* jshint evil: true */
-         s += UNorm.UChar.fromCharCode(eval("0x" + match[0])).toString();
+         s += UNorm.UChar.fromCharCode(parseInt(match[0], 16)).toString();
          /* jshint evil: false */
       }
       ret.push(s);

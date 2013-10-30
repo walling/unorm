@@ -1,5 +1,7 @@
 This is [Unicode Normalizer] in a Common JS module. I'm not affiliated with Matsuza, the original author of Unicode Normalizer.
 
+[![Build Status](https://travis-ci.org/walling/unorm.png?branch=master)](https://travis-ci.org/walling/unorm)
+
 
 Installation
 ------------

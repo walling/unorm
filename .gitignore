@@ -3,3 +3,6 @@ npm-debug.log
 .DS_Store
 research/
 coverage/
+
+src/data/src/*.class
+src/data/src/unormdata.js

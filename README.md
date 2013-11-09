@@ -76,6 +76,20 @@ Contributers
  - **Oleg Grenrus** cleaned up the code base and fixed JSHint errors.
 
 
+Development notes
+-----------------
+
+- [Unicode normalization forms report](http://www.unicode.org/reports/tr15/)
+- Unicode data can be found from http://www.unicode.org/Public/UCD/latest/ucd
+
+To generate new unicode data, run:
+```sh
+cd src/data/src
+javac UnormNormalizerBuilder.class
+java UnormNormalizerBuilder
+```
+produced `unormdata.js` contains needed table
+
 License
 -------
 

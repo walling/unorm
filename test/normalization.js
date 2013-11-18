@@ -6,7 +6,7 @@ var assert = require("assert");
 var fs = require("fs");
 var unorm = require("../lib/unorm.js");
 
-var utdata = fs.readFileSync(__dirname + "/../data//NormalizationTest.txt").toString();
+var utdata = fs.readFileSync(__dirname + "/../data/NormalizationTest.txt").toString();
 var tests = [];
 
 utdata.split("\n").forEach(function (line, lineNumber) {

@@ -145,7 +145,7 @@ class UnormNormalizerBuilder {
 					continue;
 				}
 				sbout.deleteCharAt(sbout.length() - 1);
-				sb.append(i << 8).append(":\"{").append(sbout).append("}\",\n");
+				sb.append(i << 8).append(":{").append(sbout).append("},\n");
 			}
 			sb.delete(sb.length() - 2, sb.length() - 1);
 			sb.append("\n};");

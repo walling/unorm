@@ -32,7 +32,7 @@ class UnormNormalizerBuilder {
 	 * Constants for the data file version to use.
 	 */
 	static final boolean NEW_VERSION = true;
-	private static final String DIR = "C:/Documents and Settings/matsuza/My Documents/eclipseWorkspace/UnicodeNormalizer/";
+	private static final String DIR = "../../../data/";
 
 	public static final String UNICODE_DATA = DIR + "UnicodeData.txt";
 	public static final String COMPOSITION_EXCLUSIONS = DIR + "CompositionExclusions.txt";
@@ -125,7 +125,7 @@ class UnormNormalizerBuilder {
 		public static String toJSONAll() {
 			StringBuilder sb = new StringBuilder();
 			UChar uc = null;
-			sb.append("if(!this.UNorm || !this.UNorm.UChar){throw 'must include unorm.js prior to unormdata.js';} UNorm.UChar.udata={\n");
+			sb.append("UChar.udata={\n");
 			Map<Integer, StringBuilder> res = new HashMap<Integer, StringBuilder>();
 			for (int i = 0; i < 256; ++i) {
 				res.put(i, new StringBuilder());

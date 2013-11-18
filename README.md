@@ -59,13 +59,8 @@ console.log(' * = Combining characters removed from decomposed form.');
 Road map
 --------
 
-As of October 2013.
+As of November 2013. Longer term:
 
-Short term:
-- Test harness by using the Unicode normalization test suite and examples from the reports
-
-Longer term:
-- Look at the unicode data compiler to create up-to-date (Unicode 6.2.0) compatible normalization
 - Look at possible optimizations (speed primarely, module size secondarily)
 - Adding functions to quick check normalizations: `is_nfc`, `is_nfd`, etc.
 
@@ -73,7 +68,7 @@ Longer term:
 Contributers
 ------------
 
- - **Oleg Grenrus** cleaned up the code base and fixed JSHint errors.
+ - **Oleg Grenrus** is helping to maintain this library. He cleaned up the code base, fixed JSHint errors, created a test suite and updated the normalization data to Unicode 6.3.
 
 
 Development notes

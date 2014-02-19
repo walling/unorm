@@ -1,4 +1,6 @@
 {
+  "quotmark": "double",
+  "shadow": "outer",
   "curly": true,
   "eqeqeq": true,
   "immed": true,

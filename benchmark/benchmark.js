@@ -6,6 +6,7 @@ var Benchmark = require("benchmark");
 
 var head = require("../lib/unorm.js");
 var release = require("unorm");
+var releaseVersion = require("unorm/package").version;
 
 var kalevalaEnglish = fs.readFileSync(__dirname + "/pg5186.txt").toString().substr(0, 100000);
 var kalevalaFinnish = fs.readFileSync(__dirname + "/pg7000.txt").toString().substr(0, 100000);
@@ -18,7 +19,7 @@ function benchmarkFunction(name, f) {
   .add(name + ": HEAD.........", function () {
     f(head);
   })
-  .add(name + ": release 1.3.1", function() {
+  .add(name + ": release " + releaseVersion, function() {
     f(release);
   });
 

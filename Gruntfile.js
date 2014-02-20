@@ -20,6 +20,9 @@ module.exports = function(grunt) {
 			examples: {
 				src: ["examples/**/*.js"]
 			},
+			benchmark: {
+				src: ["benchmark/**/*.js"]
+			}
 		},
 		watch: {
 			gruntfile: {

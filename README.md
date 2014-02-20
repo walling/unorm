@@ -85,6 +85,8 @@ java UnormNormalizerBuilder
 ```
 produced `unormdata.js` contains needed table
 
+Execute `node benchmark/benchmark.js` to run simple benchmarks, if you do any changes which may affect performance.
+
 License
 -------
 

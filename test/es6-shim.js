@@ -4,14 +4,20 @@
 var assert = require("assert");
 
 // require for shim
-require("../lib/unorm.js");
+var unorm = require("../lib/unorm.js");
 
 describe("es6-shim", function () {
-	it("length property of the normalize method is 0.", function () {
+	var myit = it;
+
+	if (!unorm.shimApplied) {
+		myit = it.skip;
+	}
+
+	myit("length property of the normalize method is 0.", function () {
 		assert("foo".normalize.length, 0, "length property of the normalize method is 0.");
 	});
 
-	it("If f is not one of \"NFC\", \"NFD\", \"NFKC\", or \"NFKD\", then throw a RangeError Exception.", function () {
+	myit("If f is not one of \"NFC\", \"NFD\", \"NFKC\", or \"NFKD\", then throw a RangeError Exception.", function () {
 		try {
 			"foo".normalize("NFF");
 		} catch (e) {
@@ -21,7 +27,7 @@ describe("es6-shim", function () {
 		assert(false, "Should throw");
 	});
 
-	it("works", function () {
+	myit("works", function () {
         var str = "äiti";
         assert.equal("\u00e4\u0069\u0074\u0069", str.normalize());
         assert.equal("\u00e4\u0069\u0074\u0069", str.normalize("NFC"));

@@ -3,6 +3,7 @@
 	"version" : "1.3.3",
 	"description" : "JavaScript Unicode 6.3 Normalization - NFC, NFD, NFKC, NFKD. Read <http://unicode.org/reports/tr15/> UAX #15 Unicode Normalization Forms.",
 	"author": "Bjarke Walling <bwp@bwp.dk>",
+	"license": "MIT or GPL-2.0",
 	"contributors": [
 		{ "name": "Bjarke Walling", "email": "bwp@bwp.dk" },
 		{ "name": "Oleg Grenrus", "email": "oleg.grenrus@iki.fi" },

@@ -73,7 +73,7 @@ function doTest(test){
    assert.strictEqual(nfkd[4], raw[4], test.line + ": c5 == NFKD(c5)");
 }
 
-describe("normalization " + tests.lineNumbergth + " tests", function () {
+describe("normalization " + tests.length + " tests", function () {
    var bucketSize = 100;
    var m = Math.ceil(tests.length / bucketSize);
    for (var i = 0; i < m; i++) {

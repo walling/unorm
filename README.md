@@ -115,4 +115,4 @@ software dual licensed under the MIT and GPL licenses. Here is the MIT license:
 
 
 [Unicode Normalizer]: http://coderepos.org/share/browser/lang/javascript/UnicodeNormalizer
-[String.prototype.normalize]: http://people.mozilla.org/~jorendorff/es6-draft.html#sec-15.5.3.26
+[String.prototype.normalize]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/normalize

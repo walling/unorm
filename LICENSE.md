@@ -1,4 +1,4 @@
-The software dual licensed under the MIT and GPL licenses. MIT license:
+The software dual licensed under the MIT or GPL licenses. MIT license:
 
     Copyright (c) 2008-2013 Matsuza <matsuza@gmail.com>, Bjarke Walling <bwp@bwp.dk>
     

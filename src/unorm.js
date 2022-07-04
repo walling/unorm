@@ -1,7 +1,7 @@
 /*
  * UnicodeNormalizer 1.0.0
  * Copyright (c) 2008 Matsuza
- * Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+ * Dual licensed under the MIT (MIT-LICENSE.txt) or GPL (GPL-LICENSE.txt) licenses.
  * $Date: 2008-06-05 16:44:17 +0200 (Thu, 05 Jun 2008) $
  * $Rev: 13309 $
  */
